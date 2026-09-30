@@ -249,31 +249,6 @@
     line-height: 1.5;
   }
 
-  .group-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 22px 0 12px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: .82rem;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    color: var(--copper-ink);
-  }
-  .group-label .pill {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: .7rem;
-    letter-spacing: .03em;
-    padding: 3px 10px;
-    border-radius: 999px;
-    color: #fff;
-  }
-  .group-label.free-label .pill { background: var(--gold); color: #2b1f06; }
-  .group-label.paid-label .pill { background: var(--copper); }
-  .group-label .rule { flex: 1; height: 1px; background: var(--line); }
-
   .section-note {
     margin: -8px 0 16px;
     font-size: .85rem;
@@ -600,12 +575,10 @@
       </article>`;
   }
 
-  function groupBlock(list, group) {
-    if (!list.length) return "";
-    const label = group === "free" ? "Free" : "Paid";
-    return `
-      <div class="group-label ${group}-label"><span class="pill">${label}</span><span class="rule"></span></div>
-      <div class="events">${list.map(ev => eventCard(ev, group)).join("")}</div>`;
+  function eventsBlock(freeList, paidList) {
+    const combined = freeList.map(ev => eventCard(ev, "free")).concat(paidList.map(ev => eventCard(ev, "paid")));
+    if (!combined.length) return "";
+    return `<div class="events">${combined.join("")}</div>`;
   }
 
   // Groups a town's free/paid events by day of week (Monday–Sunday, skipping
@@ -621,7 +594,7 @@
       sections.push(`
         <section class="day">
           <div class="day-head"><span class="dot">${CAL_ICON}</span>${day}${dateLabel}</div>
-          ${groupBlock(freeOnDay, "free")}${groupBlock(paidOnDay, "paid")}
+          ${eventsBlock(freeOnDay, paidOnDay)}
         </section>`);
     });
     const freeVaries = town.free.filter(ev => ev.varies);
@@ -630,7 +603,7 @@
       sections.push(`
         <section class="day varies">
           <div class="day-head varies-head"><span class="dot">${VARIES_ICON}</span>Varies / Check Live Schedule</div>
-          ${groupBlock(freeVaries, "free")}${groupBlock(paidVaries, "paid")}
+          ${eventsBlock(freeVaries, paidVaries)}
         </section>`);
     }
     return sections.join("");
