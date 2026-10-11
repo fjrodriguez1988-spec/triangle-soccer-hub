@@ -447,7 +447,7 @@
 
     <span class="tagline">Where to run onto a field this week</span>
     <h1>Triangle Pickup Soccer Hub</h1>
-    <div class="dates">October 5 – 11, 2026</div>
+    <div class="dates">October 13 – October 19, 2026</div>
     <p class="intro">Free park pickup and paid drop-in soccer across the Triangle, organized by town. Every listing shows an exact cost — free or a real price, never "varies" — and whether you need to sign up ahead of time.</p>
     <div class="town-prompt">Where do you want to play?</div>
     <div class="town-grid" id="town-grid"></div>
@@ -496,24 +496,24 @@
       { name: "XL Soccer World Sunday Pickup", time: "Sundays, 7–10am", loc: "XL Soccer World, 5600 Hillsborough St, Raleigh",
         cost: "$10 per player", desc: "Competitive indoor pickup run through the “Raleigh Indoor Soccer Pickup” Facebook group (1,100+ members) — kickoff sharp at 7am, games continue until 10.",
         link: "https://www.facebook.com/groups/xlindoorpickup/", linkLabel: "Facebook group →", preReg: false, days: ["Sunday"] },
-      { name: "Raleigh Coed Soccer Group", time: "Mon 6pm (intermediate, downtown) · Tue 6pm (low intensity) · Wed 5:30pm beginners & 6pm intermediate · Thu 6pm (low intensity) · Sun 9am (beginner-friendly)", loc: "Downtown Raleigh & North Raleigh (exact field shown to members)",
+      { name: "Raleigh Coed Soccer Group", time: "Tue 6pm (low intensity) · Wed 5:30pm beginners & 6pm intermediate · Thu 6pm (low intensity) · Sun 9am (beginner-friendly)", loc: "Downtown Raleigh & North Raleigh (exact field shown to members)",
         cost: "$8 one-time group fee", desc: "2,000+ member coed Meetup group, all ages and abilities, women guaranteed a spot regardless of waitlist. Bring a white shirt and a dark shirt.",
-        link: "https://www.meetup.com/pickupsoccer-205/", linkLabel: "Meetup group →", preReg: true, days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"] }
+        link: "https://www.meetup.com/pickupsoccer-205/", linkLabel: "Meetup group →", preReg: true, days: ["Tuesday", "Wednesday", "Thursday", "Sunday"] }
     ] },
     { id: "cary", name: "Cary", free: [
       { name: "Ed Yerha Park Field — open play", time: "Daily, dawn until dusk", loc: "Ed Yerha Park, Cary",
         cost: "Free", desc: "Town of Cary open-play field, first-come first-served. No lights or goals set up at this field.",
-        link: "https://www.carync.gov/recreation-enjoyment/facilities/multipurpose-fields/multi-purpose-free-play-schedule", linkLabel: "Town of Cary schedule →", preReg: false, days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] },
+        link: "https://www.carync.gov/recreation-enjoyment/facilities/multipurpose-fields/multi-purpose-free-play-schedule", linkLabel: "Town of Cary schedule →", preReg: false, days: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] },
       { name: "Mills Park Elementary Field 3 — open play", time: "Mon–Fri 6pm until dusk · Sat & Sun dawn until dusk", loc: "Mills Park Elementary School, Cary",
         cost: "Free", desc: "Town of Cary open-play field, first-come first-served. No lights or goals set up at this field.",
-        link: "https://www.carync.gov/recreation-enjoyment/facilities/multipurpose-fields/multi-purpose-free-play-schedule", linkLabel: "Town of Cary schedule →", preReg: false, days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] },
+        link: "https://www.carync.gov/recreation-enjoyment/facilities/multipurpose-fields/multi-purpose-free-play-schedule", linkLabel: "Town of Cary schedule →", preReg: false, days: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] },
       { name: "Turf field open play — Middle Creek, Mills Park Middle School & Thomas Brooks Park", time: "Varies day to day around programmed use — check the live schedule before heading over", loc: "Middle Creek Park, Mills Park Middle School, and Thomas Brooks Park, Cary",
         cost: "Free", desc: "These turf fields open up for free play whenever they're not booked by a league or class. The Town of Cary posts each day's open windows online rather than a fixed weekly time.",
         link: "https://www.carync.gov/recreation-enjoyment/facilities/multipurpose-fields/multi-purpose-free-play-schedule", linkLabel: "Today's open-play times →", preReg: false, varies: true }
     ], paid: [] },
     { id: "apex", name: "Apex", free: [], paid: [
       { name: "Apex Adult Soccer League (Fall season)", time: "Tue & Thu evenings, plus Sun afternoons", loc: "Apex town athletic fields",
-        cost: "$75 resident / $100 non-resident per season", desc: "Town of Apex 30-and-over coed league, 11v11, fall season running late Aug through early Nov, so this week is mid-season. Season registration closed Aug 13, but the program supervisor can add you to the free-agent list at no cost until a team picks you up.",
+        cost: "$75 resident / $100 non-resident per season", desc: "Town of Apex 30-and-over coed league, 11v11, run through the fall season (late Aug–early Nov, so this week is mid-season). No team? Email the program supervisor to join the free-agent list at no cost until a captain picks you up.",
         link: "https://www.apexnc.org/408/Adult-Soccer", linkLabel: "Apex Adult Soccer →", preReg: true, days: ["Tuesday", "Thursday", "Sunday"] }
     ] },
     { id: "durham", name: "Durham", free: [
@@ -549,8 +549,8 @@
   // this template is rebuilt for a new week, so each day-head can show the
   // real date next to the weekday name (e.g. "Tuesday, Sept 29").
   const DAY_DATES = {
-    Monday: "Oct 5", Tuesday: "Oct 6", Wednesday: "Oct 7", Thursday: "Oct 8",
-    Friday: "Oct 9", Saturday: "Oct 10", Sunday: "Oct 11"
+    Monday: "Oct 13", Tuesday: "Oct 14", Wednesday: "Oct 15",
+    Thursday: "Oct 16", Friday: "Oct 17", Saturday: "Oct 18", Sunday: "Oct 19"
   };
 
   function eventCard(ev, group) {
